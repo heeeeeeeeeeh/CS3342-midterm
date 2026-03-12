@@ -15,10 +15,15 @@ $(document).ready(function() {
       $("#age").text(`${data.dob.age}`)
       $("#pic").attr("src", data.picture.large)
       if (data.gender === "male") {
+        $("body").removeClass("female")
         $("body").addClass("male")
       } else {
         $("body").addClass("female")
+        $("body").removeClass("male")
       }
+      let p = $("#phone")
+      p.text(`Mobile: ${data.cell}`)
+      $(".details").append(p)
     })
   })
 })
